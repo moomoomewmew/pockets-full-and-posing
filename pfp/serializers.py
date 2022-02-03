@@ -11,7 +11,7 @@ class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Department
-        fields = ('id', 'name', 'image')
+        fields = ('id', 'name', 'items', 'image')
 
 
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
