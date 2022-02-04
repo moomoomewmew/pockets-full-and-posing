@@ -157,3 +157,11 @@ input{
   }
 
 
+.card-image {
+  max-height: 20vh;
+}
+
+.details-image {
+  max-height: 50vh;
+  width: auto;
+}

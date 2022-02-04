@@ -2,7 +2,7 @@
   <div class="vestment-content" >
     <section class="image-container">
       <div>
-        <img :src="vestment.image" :alt="vestment.name" />
+        <img class="details-image" :src="vestment.image" :alt="vestment.name" />
         
         </div>
     </section>
@@ -44,11 +44,11 @@ export default {
           username: 'pfpadmin',
           password: 'pocketses'
         }
-      })
-      .then(() => {
-        alert('Your item has been purchased!')
-        this.$router.push('/')
-      })
+        })
+        .then(() => {
+          alert('Your item has been purchased!')
+          this.$router.push('/')
+        })
       } else {
         await axios.put(`http://localhost:8000/items/${vestmentId}`, { 
           'name': this.vestment.name,

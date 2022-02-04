@@ -3,10 +3,10 @@
     <div class = "search">
       <form @submit="getSearchResults" >
         <input
-        type="text"
-        :value="searchQuery"
-        @input="handleChange"
-         />
+          type="text"
+          :value="searchQuery"
+          @input="handleChange"
+        />
         <button type="submit">Fetch</button>
       </form>
       
@@ -28,12 +28,9 @@
     </div>
   </div>
 </template>
- 
- 
- 
+
 <script> 
 import axios from 'axios'
-// import components
 import DepartmentCard from '../components/DepartmentCard.vue'
 import VestmentCard from '../components/VestmentCard.vue'
 
@@ -51,8 +48,8 @@ export default {
     vestments: []
   }),
 mounted: async function() {
- await this.getDepartments(),
- await this.getVestments()
+  await this.getDepartments(),
+  await this.getVestments()
 },
 methods: {
   async getDepartments() {
