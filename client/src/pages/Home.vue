@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class = "search">
-      <form @submit="getSearchResults" v-on:keyup.enter="getSearchResults" >
+      <form @submit="getSearchResults" >
         <input
         type="text"
         :value="searchQuery"
@@ -65,14 +65,13 @@ async getVestments() {
   },
   getSearchResults(e) {
     e.preventDefault()
-    const res = this.vestments.filter(vestment => vestment.name === this.searchQuery)
+    const res = this.vestments.filter(vestment => vestment.name.toLowerCase() === this.searchQuery.toLowerCase())
     this.searchResults = res
     this.searched = true
     this.searchQuery = ''
   },
   handleChange(e) {
     this.searchQuery = e.target.value
-
   },
   selectDepartment(departmentId, departmentName) {
     this.$router.push(`/vestments-by-department/${departmentId}/${departmentName}`)
