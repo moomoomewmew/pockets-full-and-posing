@@ -1,1 +1,2 @@
-web: gunicorn pockets-full-and-posing
+web: npm start
+web: npm run dev
