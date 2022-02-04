@@ -14,15 +14,28 @@ nav {
   }
 
 
-.nav   {
+.nav, a   {
     margin: 0 1em;
     color: rgb(6, 24, 13);
     text-shadow: .2vw .2vw salmon ;
     text-decoration: none;
+    cursor: pointer;
   }
-.nav:hover{
+.cclink{
+  font-size: 3em;
+}
+ 
+.nav:hover,
+a:hover{
     transform: scale(1.2);
   }
+.material-icons{
+  font-size: 4em;
+  position: absolute;
+  top: 0.1em;
+  right: 0.1em;
+  cursor: pointer;
+}
 p,label,h1, h2, h3{
     font-family: 'IM Fell English SC', serif;
 }
@@ -30,17 +43,35 @@ p,label,h1, h2, h3{
 input{
     background-color:rgb(231, 215, 204, .4);
     border: 0;
-    /* border-bottom: 2px solid rgba(255, 255, 255, 0.1); */
+    outline: none;
     padding: 0.5em 0.2em;
     width: auto;
     transition: all 0.2s;
     font-size: 1.3rem;
     color: rgb(167, 136, 136);
   }
-  footer{
+  .footer{
+    display: grid;
+    align-content: flex-start;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: rgba(3, 109, 38, 0.4);
+    grid-column-gap: .5em;
     margin-top: 5em;
   }
+  .sign{
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .contact {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .CC{
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+
   
   input:active, #sort
   input:focus {
