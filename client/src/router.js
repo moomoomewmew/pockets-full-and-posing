@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router';
-// import components
+
 import Home from './pages/Home';
 import ViewVestments from './pages/ViewVestments';
 import VestmentDetails from './pages/VestmentDetails';
