@@ -13,7 +13,7 @@
       <h2 v-if="searched">Search Results</h2>
       <section class="search-results">
 
-        <VestmentCard v-for="vestment in searchResults" :key="vestment.id" :vestment="vestment" />
+        <VestmentCard v-for="vestment in searchResults" :key="vestment.id" :vestment="vestment" @click.native="selectVestment(vestment.id)"/>
 
       </section>
     </div>
@@ -21,7 +21,7 @@
       <h2>Departments</h2>
       <section class="department-card-container">
       
-        <DepartmentCard v-for="department in departments" :key="department.id"/>
+        <DepartmentCard v-for="department in departments" :key="department.id" @click.native="selectDepartment(department.id, department.name)"/>
 
       </section>
 
@@ -36,7 +36,6 @@ import axios from 'axios'
 // import components
 import DepartmentCard from '../components/DepartmentCard.vue'
 import VestmentCard from '../components/VestmentCard.vue'
-import BASE_URL from '../globals/index'
 
 export default {
   name: 'Home',
@@ -57,11 +56,11 @@ mounted: async function() {
 },
 methods: {
   async getDepartments() {
-    const res = await axios.get(`${BASE_URL}/departments/`)
+    const res = await axios.get(`http://localhost:8000//departments/`)
     this.departments = res.data
   },
 async getVestments() {
-    const res = await axios.get(`${BASE_URL}/items/`)
+    const res = await axios.get(`http://localhost:8000//items/`)
     this.vestments = res.data
   },
   getSearchResults(e) {
@@ -77,7 +76,9 @@ async getVestments() {
   },
   selectDepartment(departmentId, departmentName) {
     this.$router.push(`/vestments-by-department/${departmentId}/${departmentName}`)
-
+  },
+  selectVestment(vestmentId) {
+    this.$router.push(`/details/${vestmentId}`)
   }
 }
 
