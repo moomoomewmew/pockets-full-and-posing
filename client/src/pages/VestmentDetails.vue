@@ -2,7 +2,7 @@
   <div class="vestment-content" >
     <section class="image-container">
       <div>
-        <img :src="vestment.image" />
+        <img :src="vestment.image" :alt="vestment.name" />
         
         </div>
     </section>
@@ -20,14 +20,23 @@
 </template>
 
 <script>
-
+import axios from 'axios'
   
 export default {
-  
   name: 'VestmentDetails',
-  props: ['vestment']
-  
- 
+  data: () => ({
+    vestment: null
+  }),
+  mounted: async function() {
+    await this.getVestmentDetails()
+  },
+  methods: {
+    async getVestmentDetails() {
+      const vestmentId = parseInt(this.$route.params.vestment_id)
+      const res = await axios.get(`http://localhost:8000/items/${vestmentId}`)
+      this.vestment = res.data
+    }
   }
+}
 
 </script>

@@ -1,13 +1,14 @@
 <template>
   <div class="view-departments">
-    <h1>{{ department }}</h1>
+    <h1>Vestments</h1>
     <section class="dropdown-menu">
       <label for="sort">Sort Vestments by Price:</label>
       <br />
       <select name="sort" id="sort" @change="sortVestments">
         <option value=""></option>
         <option value="asc">Lowest to Highest</option>
-        <option value="desc">Highest to Lowest</option>      </select>
+        <option value="desc">Highest to Lowest</option>
+      </select>
     </section>
     <div class="vestments-container">
       <VestmentCard v-for="vestment in vestments" :key="vestment.id" :vestment="vestment" @click.native="selectVestment(vestment.id)" />
@@ -29,17 +30,12 @@ export default {
     department: ''
   }),
   mounted: async function () {
-    await this.getVestmentsByDepartment()
-    this.getDepartment()
+    await this.getVestments()
   },
   methods: {
-    async getVestmentsByDepartment() {
-      const departmentId = parseInt(this.$route.params.department_id)
-      const res = await axios.get(`http://localhost:8000/departments/${departmentId}`)
-      this.vestments = res.data.items
-    },
-    getDepartment () {
-      this.department = this.$route.params.department_name
+    async getVestments() {
+      const res = await axios.get(`http://localhost:8000/items`)
+      this.vestments = res.data
     },
     sortVestments(e) {
       const sortAsc = () => {
