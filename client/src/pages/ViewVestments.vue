@@ -19,7 +19,6 @@
 <script>
 import axios from 'axios'
 import VestmentCard from '../components/VestmentCard.vue'
-import BASE_URL from '../globals/index'
 
 export default {
   name: 'ViewVestments',
@@ -37,7 +36,7 @@ export default {
   methods: {
     async getVestmentsByDepartment() {
       const departmentId = parseInt(this.$route.params.department_id)
-      const res = await axios.get(`${BASE_URL}/departments/${departmentId}`)
+      const res = await axios.get(`http://localhost:8000/departments/${departmentId}`)
       this.vestments = res.data.items
     },
     getDepartment () {
@@ -46,12 +45,12 @@ export default {
     sortVestments(e) {
       const sortAsc = () => {
         this.vestments.sort((a, b) => {
-          return a.rating - b.rating
+          return a.price - b.price
         })
       }
       const sortDesc = () => {
         this.vestments.sort((a, b) => {
-          return b.rating - a.rating
+          return b.price - a.price
         })
       }
       e.target.value === 'asc' ? sortAsc() : sortDesc()
