@@ -11,14 +11,18 @@ class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Department
-        fields = ('id', 'name', 'items', 'image')
+        fields = ('id', 'name', 'image', 'items')
 
 
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
-    department = serializers.HyperlinkedRelatedField(
+    department_url = serializers.HyperlinkedRelatedField(
         view_name='department_detail',
         read_only=True)
+            
+    department = serializers.PrimaryKeyRelatedField(
+        queryset = Department.objects.all(),
+    )
 
     class Meta:
         model = Item
-        fields = ('id', 'department', 'description', 'image', 'price', 'quantity', 'size')
+        fields = ('id', 'name', 'department', 'department_url', 'description', 'image', 'price', 'quantity', 'size')
