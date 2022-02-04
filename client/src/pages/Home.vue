@@ -12,13 +12,13 @@
       
       <h2 v-if="searched">Search Results</h2>
       <section class="search-results">
-        <!-- vestment card here -->
+        <VestmentCard v-for="vestment in searchResults" :key="vestment.id" :vestment="vestment" />
       </section>
     </div>
     <div class="departments" v-if="!searched">
       <h2>Departments</h2>
       <section class="department-card-container">
-        <!-- department card here  -->
+        <DepartmentCard v-for="department in departments" :key="department.id"/>
       </section>
 
     </div>
@@ -30,9 +30,15 @@
 <script> 
 import axios from 'axios'
 // import components
+import DepartmentCard from '../components/DepartmentCard.vue'
+import VestmentCard from '../components/VestmentCard.vue'
+
 export default {
   name: 'Home',
-  components: {},
+  components: {
+    DepartmentCard,
+    VestmentCard
+  },
   data: () => ({
     departments: [],
     searchQuery: '',
@@ -62,6 +68,9 @@ async getVestments() {
   },
   handleChange(e) {
     this.searchQuery = e.target.value
+  },
+  selectDepartment(departmentId, departmentName) {
+    this.$router.push(`/vestments-by-department/${departmentId}/${departmentName}`)
   }
 }
 
