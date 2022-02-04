@@ -2,18 +2,6 @@ from rest_framework import serializers
 from .models import Department, Item
 
 
-class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
-    items = serializers.HyperlinkedRelatedField(
-        view_name='item_detail',
-        many=True,
-        read_only=True
-    )
-
-    class Meta:
-        model = Department
-        fields = ('id', 'name', 'image', 'items')
-
-
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
     department_url = serializers.HyperlinkedRelatedField(
         view_name='department_detail',
@@ -26,3 +14,13 @@ class ItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Item
         fields = ('id', 'name', 'department', 'department_url', 'description', 'image', 'price', 'quantity', 'size')
+
+class DepartmentSerializer(serializers.HyperlinkedModelSerializer):
+    items = ItemSerializer(
+        many=True,
+        read_only=True
+    )
+
+    class Meta:
+        model = Department
+        fields = ('id', 'name', 'image', 'items')
