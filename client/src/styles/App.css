@@ -14,12 +14,12 @@ nav {
   }
 
 header {
-  position: inherit;
-  display: grid;
-  background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Flivinghistoryvw.com%2Fdata%2Fmedia%2F0%2F0%2FNing_Media%2Fdiscussions%2F2%2F2277_discussions.png&f=1&nofb=1');
-  background-size: cover;
-  /* background-position: center; */
-  grid-gap: 1em;
+    position: inherit;
+    display: grid;
+    background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Flivinghistoryvw.com%2Fdata%2Fmedia%2F0%2F0%2FNing_Media%2Fdiscussions%2F2%2F2277_discussions.png&f=1&nofb=1');
+    background-size: cover;
+    /* background-position: center; */
+    grid-gap: 1em;
 }
 .nav   {
     margin: 0 1em;
@@ -27,14 +27,17 @@ header {
     text-shadow: .2vw .2vw salmon ;
     text-decoration: none;
   }
-  .nav:hover{
+.nav:hover{
     transform: scale(1.2);
   }
+h2{
+    font-family: 'IM Fell English SC', serif;
+}
 
 input {
-    background-color: transparent;
+    background-color:rgb(231, 215, 204, .4);
     border: 0;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    /* border-bottom: 2px solid rgba(255, 255, 255, 0.1); */
     padding: 0.5em 0.2em;
     width: auto;
     transition: all 0.2s;

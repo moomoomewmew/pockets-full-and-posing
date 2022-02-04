@@ -5,10 +5,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-a {
-    color: rgb(167, 136, 136);
-    text-decoration: none;
-    margin: 3vw;
-  }
+
 
 
