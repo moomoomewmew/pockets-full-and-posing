@@ -6,16 +6,21 @@
     <main>
       <router-view></router-view>
     </main>
+    <footer>
+      <Foot />
+    </footer>
   </div>
 </template>
 
 <script>
+import Foot from './components/Footer.vue'
 import Nav from './components/Nav'
 
 export default {
   name: 'App',
   components: {
-    Nav
+    Nav,
+    Foot
     
   }
 }
