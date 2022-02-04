@@ -1,30 +1,18 @@
 <template>
 <div class ="vestment-card">
   <div class="-image-wrapper">
-  <!-- <img :src="this.vestment.image" /> -->
+    <img :src="vestment.image" />
   </div>
   <div class="info-wrapper">
-    <!-- {{ vestment.name }} -->
-  </div>
-  <div>
-    <!-- Price {{ vestment.price }} -->
+    <h3>{{ vestment.name }}</h3>
+    <h4>Price: ${{ vestment.price }}</h4>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-  name: 'Vestment Card',
-  props: {
-    vestment: {
-      name: "",
-      price:{}
-
-    }},
-    methods: {
-      // selectVestment(vestmentId){
-      //   this.$emit('selectVestment', vestmentId)
-      }
-    }
-// }
+  name: 'VestmentCard',
+  props: ['vestment']
+}
 </script>

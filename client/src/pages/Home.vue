@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class = "search">
-      <form @submit="getSearchResults" v-on:keyup.enter="getSearchResults" >
+      <form @submit="getSearchResults" >
         <input
         type="text"
         :value="searchQuery"
@@ -21,7 +21,7 @@
       <h2>Departments</h2>
       <section class="department-card-container">
       
-        <DepartmentCard v-for="department in departments" :key="department.id" @click.native="selectDepartment(department.id, department.name)"/>
+        <DepartmentCard v-for="department in departments" :key="department.id" :department="department" @click.native="selectDepartment(department.id, department.name)"/>
 
       </section>
 
@@ -56,23 +56,22 @@ mounted: async function() {
 },
 methods: {
   async getDepartments() {
-    const res = await axios.get(`http://localhost:8000//departments/`)
+    const res = await axios.get(`http://localhost:8000/departments/`)
     this.departments = res.data
   },
 async getVestments() {
-    const res = await axios.get(`http://localhost:8000//items/`)
+    const res = await axios.get(`http://localhost:8000/items/`)
     this.vestments = res.data
   },
   getSearchResults(e) {
     e.preventDefault()
-    const res = this.vestments.filter(vestment => vestment.name === this.searchQuery)
+    const res = this.vestments.filter(vestment => vestment.name.toLowerCase().includes(this.searchQuery.toLowerCase()))
     this.searchResults = res
     this.searched = true
     this.searchQuery = ''
   },
   handleChange(e) {
     this.searchQuery = e.target.value
-
   },
   selectDepartment(departmentId, departmentName) {
     this.$router.push(`/vestments-by-department/${departmentId}/${departmentName}`)
