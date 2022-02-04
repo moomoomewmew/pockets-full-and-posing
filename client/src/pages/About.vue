@@ -9,5 +9,9 @@
 </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: 'About'
+}
+</script>
 
