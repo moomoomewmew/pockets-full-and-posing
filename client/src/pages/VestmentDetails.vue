@@ -38,17 +38,37 @@ export default {
       this.vestment = res.data
     },
     async buyVestment(vestmentId) {
-      await axios.put(`http://localhost:8000/items/${vestmentId}`, {
-        quantity: this.vestment.quantity -= 1
-      }, {
-        headers: {
-          username: 'benjaminobambino',
-          password: 'pockets'
+      if (this.vestment.quantity === 1) {
+        await axios.delete(`http://localhost:8000/items/${vestmentId}`, {
+        auth: {
+          username: 'pfpadmin',
+          password: 'pocketses'
         }
       })
       .then(() => {
-        this.getVestmentDetails()
+        alert('Your item has been purchased!')
+        this.$router.push('/')
       })
+      } else {
+        await axios.put(`http://localhost:8000/items/${vestmentId}`, { 
+          'name': this.vestment.name,
+          'department': this.vestment.department,
+          'description': this.vestment.description,
+          'image': this.vestment.image,
+          'price': this.vestment.price,
+          'size': this.vestment.size,
+          'quantity': this.vestment.quantity -= 1
+        }, {
+          auth: {
+            'username': 'pfpadmin',
+            'password': 'pocketses'
+          }
+        })
+        .then(() => {
+          alert('Your item has been purchased!')
+          this.getVestmentDetails()
+        })
+      }
     }
   }
 }
