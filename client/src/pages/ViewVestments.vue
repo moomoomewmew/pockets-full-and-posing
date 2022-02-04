@@ -11,7 +11,7 @@
       </select>
     </section>
     <div class="vestments-container">
-      <VestmentCard v-for="vestment in vestments" :key="vestment.id" :vestment="vestment" @click.native="selectVestment(vestment.id)" />
+      <VestmentCard v-for="vestment in vestments" :key="vestment.id" :vestment="vestment" :department="department" @click.native="selectVestment(vestment.id)" />
     </div>
   </div>
 </template>
@@ -29,8 +29,8 @@ export default {
     vestments: [],
     department: ''
   }),
-  mounted() {
-    this.getVestmentsByDepartment()
+  mounted: async function () {
+    await this.getVestmentsByDepartment()
     this.getDepartment()
   },
   methods: {
