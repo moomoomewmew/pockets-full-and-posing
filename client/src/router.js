@@ -1,14 +1,13 @@
 import VueRouter from 'vue-router';
-// import components
 import Home from './pages/Home';
 import ViewVestments from './pages/ViewVestments';
 import VestmentDetails from './pages/VestmentDetails';
 import ViewAllVestments from './pages/ViewAllVestments';
-// import About from './pages/About';
+import About from './pages/About';
 
 const routes = [
   { path: '/', component: Home, name: 'Home' },
-  // { path: '/about', component: About, name: 'About' },
+  { path: '/about', component: About, name: 'About' },
   { path: '/vestments', component: ViewAllVestments, name: 'ViewAllVestments' },
   {
     path: '/details/:vestment_id',
