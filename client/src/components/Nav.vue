@@ -1,5 +1,8 @@
 <template>
 <header>
+  <span class="material-icons">
+shopping_cart
+</span>
   <nav >
     <router-link class="nav" to="/">Home</router-link>
     <router-link class="nav" to="/vestments">Vestments</router-link>
