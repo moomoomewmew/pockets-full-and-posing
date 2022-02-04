@@ -65,7 +65,7 @@ async getVestments() {
   },
   getSearchResults(e) {
     e.preventDefault()
-    const res = this.vestments.filter(vestment => vestment.name.toLowerCase() === this.searchQuery.toLowerCase())
+    const res = this.vestments.filter(vestment => vestment.name.toLowerCase().includes(this.searchQuery.toLowerCase()))
     this.searchResults = res
     this.searched = true
     this.searchQuery = ''
