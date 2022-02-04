@@ -1,9 +1,11 @@
 <template>
+<header>
   <nav >
-    <router-link to="/">Home</router-link>
-    <router-link to="/vestments">Vestments</router-link>
-    <router-link to="/about">About</router-link>
+    <router-link class="nav" to="/">Home</router-link>
+    <router-link class="nav" to="/vestments">Vestments</router-link>
+    <router-link class="nav" to="/about">About</router-link>
   </nav>
+</header>
 </template>
 
 <script>

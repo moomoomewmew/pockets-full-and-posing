@@ -6,21 +6,83 @@ nav {
     border-radius: 5px;  
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 3em;
+    align-items: flex-end;
+    height: 8em;
     font-size: 5vw;
     font-weight: bold;
     font-family: 'IM Fell English SC', serif;
-    text-decoration: none;
   }
 
-.nav{
+header {
+  position: inherit;
+  display: grid;
+  background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Flivinghistoryvw.com%2Fdata%2Fmedia%2F0%2F0%2FNing_Media%2Fdiscussions%2F2%2F2277_discussions.png&f=1&nofb=1');
+  background-size: cover;
+  background-position: center;
+  grid-gap: 1em;
+}
+.nav   {
     margin: 0 1em;
-    color: rgb(3, 20, 36); 
+    color: rgb(6, 24, 13);
+    text-shadow: .2vw .2vw salmon ;
     text-decoration: none;
   }
+  .nav:hover{
+    transform: scale(1.2);
+  }
+
+input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5em 0.2em;
+    width: auto;
+    transition: all 0.2s;
+    font-size: 1.3rem;
+    color: rgb(167, 136, 136);
+  }
+  
+  input:active,
+  input:focus {
+    outline: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  }
+  
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.2s;
+  }
+  
+  input:active::placeholder,
+  input:focus::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+  }
+  
+  main {
+    padding: 2em 0;
+  }
+  
   form {
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+  
+  input {
+    width: 80%;
+    margin: 0 1em;
+  }
+  
+  button {
+    padding: 0.2em 1em;
+    border: 0;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  .department-card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
