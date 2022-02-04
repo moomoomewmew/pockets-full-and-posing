@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'IM Fell English SC', serif;
+    src: url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap')
+}
+nav {
+    border-radius: 5px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3em;
+    font-size: 5vw;
+    font-weight: bold;
+    font-family: 'IM Fell English SC', serif;
+    text-decoration: none;
+  }
+
+.nav{
+    margin: 0 1em;
+    color: rgb(3, 20, 36); 
+    text-decoration: none;
+  }
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
