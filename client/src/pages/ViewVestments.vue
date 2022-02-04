@@ -6,9 +6,8 @@
       <br />
       <select name="sort" id="sort" @change="sortVestments">
         <option value=""></option>
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-      </select>
+        <option value="asc">Lowest to Highest</option>
+        <option value="desc">Highest to Lowest</option>      </select>
     </section>
     <div class="vestments-container">
       <VestmentCard v-for="vestment in vestments" :key="vestment.id" :vestment="vestment" @click.native="selectVestment(vestment.id)" />
