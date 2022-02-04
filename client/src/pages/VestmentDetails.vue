@@ -11,9 +11,9 @@
       <div>
         <h3>{{ vestment.name }}</h3>
         <p> {{ vestment.description }}</p>
-        <h4>{{ vestment.price }}</h4>
+        <h4>Price: ${{ vestment.price }}</h4>
         <h4>{{ vestment.size }}</h4>
-        <h4>{{ vestment.quantity }}</h4>
+        <h4>Quantity: {{ vestment.quantity }}</h4>
         <button @click="buyVestment(vestment.id)">Purchase</button>
       </div>
     </section>
