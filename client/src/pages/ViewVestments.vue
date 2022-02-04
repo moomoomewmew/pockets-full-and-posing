@@ -19,6 +19,7 @@
 <script>
 import axios from 'axios'
 import VestmentCard from '../components/VestmentCard.vue'
+import BASE_URL from '../globals/index'
 
 export default {
   name: 'ViewVestments',
@@ -36,7 +37,7 @@ export default {
   methods: {
     async getVestmentsByDepartment() {
       const departmentId = parseInt(this.$route.params.department_id)
-      const res = await axios.get(`http://localhost:8000/departments/${departmentId}`)
+      const res = await axios.get(`${BASE_URL}/departments/${departmentId}`)
       this.vestments = res.data.items
     },
     getDepartment () {
