@@ -1,2 +1,2 @@
-web: npm start
-web: npm run dev
+web: gunicorn pockets-full-and-posing
+web: npm run serve
