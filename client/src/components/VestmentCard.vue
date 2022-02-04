@@ -1,7 +1,7 @@
 <template>
 <div class ="vestment-card">
   <div class="-image-wrapper">
-    <img :src="vestment.image" />
+    <img :src="vestment.image" class="card-image"/>
   </div>
   <div class="info-wrapper">
     <h3>{{ vestment.name }}</h3>

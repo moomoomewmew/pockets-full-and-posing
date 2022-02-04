@@ -1,4 +1,5 @@
 <template>
+
 <div>
   <div class="footer">
     <div class="contact">
@@ -11,9 +12,7 @@
     </div>
     <div class="CC">
       <h3>Be a part of a community</h3>
-      <a class="cclink" href="https://the-creature-collab.herokuapp.com/">
-        CC
-      </a>
+      <a class ='cclink' href='https://the-creature-collab.herokuapp.com/' target="_blank" rel="noopener noreferrer"> CC </a>
     </div>
     <div class="sign">
       <h3>Sign up for our mailing list for 30% off your first purchase!</h3>

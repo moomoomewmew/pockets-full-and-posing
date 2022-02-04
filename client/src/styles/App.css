@@ -198,9 +198,19 @@ input{
     width: 100%;
   }
 
+.card-image {
+  max-height: 20vh;
+}
+
+.details-image {
+  max-height: 50vh;
+  width: auto;
+}
+
 .input-and-butt {
   display: flex;
   flex-direction: row;
   margin-bottom: .5em;
   margin-right: 1em;
 }
+
