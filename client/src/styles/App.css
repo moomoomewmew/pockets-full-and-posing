@@ -18,7 +18,7 @@ header {
   display: grid;
   background-image: url('https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Flivinghistoryvw.com%2Fdata%2Fmedia%2F0%2F0%2FNing_Media%2Fdiscussions%2F2%2F2277_discussions.png&f=1&nofb=1');
   background-size: cover;
-  background-position: center;
+  /* background-position: center; */
   grid-gap: 1em;
 }
 .nav   {
