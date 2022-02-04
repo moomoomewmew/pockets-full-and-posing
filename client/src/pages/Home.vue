@@ -12,13 +12,17 @@
       
       <h2 v-if="searched">Search Results</h2>
       <section class="search-results">
+
         <VestmentCard v-for="vestment in searchResults" :key="vestment.id" :vestment="vestment" />
+
       </section>
     </div>
     <div class="departments" v-if="!searched">
       <h2>Departments</h2>
       <section class="department-card-container">
+      
         <DepartmentCard v-for="department in departments" :key="department.id"/>
+
       </section>
 
     </div>
@@ -68,9 +72,11 @@ async getVestments() {
   },
   handleChange(e) {
     this.searchQuery = e.target.value
+
   },
   selectDepartment(departmentId, departmentName) {
     this.$router.push(`/vestments-by-department/${departmentId}/${departmentName}`)
+
   }
 }
 
