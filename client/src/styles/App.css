@@ -38,7 +38,7 @@ input{
     color: rgb(167, 136, 136);
   }
   footer{
-    background-color: rgb(116, 189, 192, .6);
+    background-color: rgba(3, 109, 38, 0.4);
   }
   
   input:active, #sort
@@ -86,8 +86,9 @@ input{
     box-shadow: none;
     outline: none;
     width: 15em;
+    margin-bottom: 5em;
   }
-  .department-card-container{
+  .department-card-container, .vestments-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     flex-wrap: wrap;
@@ -103,8 +104,18 @@ input{
     max-height: 15em;
     max-width: auto;
   }
+  .vestment-card{
+    display: flex;
+    align-items: center;
+    margin: 1em;
+    justify-content: center;
+    max-height: 20vh;
+    max-width: auto;
+
+  }
   img{
     height: 100%;
     width: 100%;
   }
+
 
